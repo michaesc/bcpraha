@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Protecting Secrets with Hardware</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/monero.css" id="theme">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-transition='zoom-in fade-out'>
+                    <h1 style='font-size: 240%'>Blockchain & Bitcoin</h1>
+                    <h2 style='font-size: 260%; line-height: 80%'>Protecting Secrets</h2>
+                    <h2 style='font-size: 300%; line-height: 80%'>With&nbsp;&nbsp;Hardware</h2>
+                    <h3 style='line-height: normal'><a href='http://michael.schloh.com/'>Michael Schloh von Bennewitz</a></h3>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <h2>In this session</h2>
+                    <ul style='font-weight: bold;
+                        font-size: 150%'>
+                        <li>Cryptodevice trends</li>
+                        <li>Why &amp; how of secrets</li>
+                        <li>Some hardware theory</li>
+                        <li>Questions answered</li>
+                    </ul>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <h2>Device<br />Trends</h2>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <img data-src='img/nitropro.jpeg' alt='Nitrokey Pro' style='transform: scale(.75); -webkit-transform: scale(.75); border-radius: 12px' />
+                    <h3 style='margin-top: -1em'>Nitrokey Pro</h3>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <img height='360' data-src='img/digbitbox.png' alt='Digital Bitbox' style='transform: rotate(90deg); -webkit-transform: rotate(90deg); border-radius: 12px' />
+                    <h3 style='margin-top: -1em'>Digital Bitbox</h3>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <img height='400' data-src='img/libremkey.png' alt='Librem Key' style='border-radius: 12px' />
+                    <h3>Librem Key</h3>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <img data-src='img/mooltipass.jpeg' alt='Mooltipass Mini' style='border-radius: 12px' />
+                    <h3>Mooltipass Mini</h3>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <img data-src='img/tomudev.jpeg' alt='TOMU' style='border-radius: 12px' />
+                    <h3>TOMU.im</h3>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <img height='380' data-src='img/hsmsc4.jpeg' alt='SC4 HSM' style='border-radius: 12px' />
+                    <h3>SC4 HSM</h3>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <img data-src='img/trezor.png' alt='Trezor' style='border-radius: 12px' />
+                    <h3>Trezor</h3>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <img height='380' data-src='img/coldcard.png' alt='Coldcard' style='border-radius: 12px' />
+                    <h3>Coldcard</h3>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <img height='400' data-src='img/ledger.png' alt='Ledger' style='border-radius: 12px' />
+                    <h3>Ledger</h3>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <img height='400' data-src='img/keepkey.png' alt='Keepkey' style='border-radius: 12px' />
+                    <h3>Keepkey</h3>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <img height='380' data-src='img/frdmkl82zbd.png' alt='HWallet' style='border-radius: 12px' />
+                    <h3>HWallet</h3>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <img height='480' data-src='img/monhwanim-et0a.gif' alt='Monero Wallet' style='border-radius: 12px' />
+                    <h3>Monero Wallet</h3>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <img height='480' data-src='img/zerynthesp.jpeg' alt='Zerynth Tracker' style='border-radius: 12px' />
+                    <h3>Zerynth Tracker</h3>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <h3>Q: What are these devices doing?</h3>
+                    <h3 class='fragment' style='text-align: left'>A: They are controlling access<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;…to secrets!</h3>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <h2>Why store secrets?</h2>
+                    <ul style='font-weight: bold;
+                        font-size: 150%'>
+                        <li>Maintain order</li>
+                        <li>Defend value</li>
+                        <li>Assure privacy</li>
+                    </ul>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <h2>How to store secrets?</h2>
+                    <ul style='font-weight: bold;
+                        font-size: 150%'>
+                        <li>In human memory</li>
+                        <li>On paper notes</li>
+                        <li>In computers</li>
+                        <li>In metal safes</li>
+                    </ul>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <h2>How hardware helps?</h2>
+                    <ul style='font-weight: bold;
+                        font-size: 150%'>
+                        <li>Provides storage</li>
+                        <li>Interfaces with users</li>
+                        <li>Processes block data</li>
+                        <li>Communicates upstream</li>
+                    </ul>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <h2>Special about blockchains?</h2>
+                    <ul style='font-weight: bold;
+                        font-size: 150%'>
+                        <li>Structured</li>
+                        <li>Distributed</li>
+                        <li>Transactional</li>
+                    </ul>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <h2>How does a traditional hardware wallet work?</h2>
+                    <ul style='font-weight: bold;
+                        font-size: 150%'>
+                        <li>Isolated devices store a secret</li>
+                        <li>Device listens for commands</li>
+                        <li>Host sends transaction to sign</li>
+                        <li>Device requests user authority</li>
+                        <li>Device signs, sends signature</li>
+                    </ul>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <h2>Relevant applications</h2>
+                    <ul style='font-weight: bold;
+                        font-size: 150%'>
+                        <li>Supply chain tracking</li>
+                        <li>Insurance asset management</li>
+                        <li>Inventory and stocking logic</li>
+                        <li>Logistics and delivery control</li>
+                    </ul>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <h2>Hardware Theory</h2>
+                    <ul style='font-weight: bold;
+                        font-size: 150%'>
+                        <li>MCU integration</li>
+                        <li>Program storage</li>
+                        <li>Debug interfaces</li>
+                        <li>Input and output</li>
+                        <li>On chip security</li>
+                    </ul>
+                </section>
+                <section data-transition='zoom-in fade-out'>
+                    <h1 style='font-size: 240%'>Blockchain & Bitcoin</h1>
+                    <h2 style='font-size: 260%; line-height: 80%'>Protecting Secrets</h2>
+                    <h2 style='font-size: 300%; line-height: 80%'>With&nbsp;&nbsp;Hardware</h2>
+                    <h3 style='line-height: normal'><a href='http://michael.schloh.com/'>Michael Schloh von Bennewitz</a></h3>
+                </section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                center: true,
+                history: false,
+                transition: 'slide',
+                transitionSpeed: 'slow',
+                backgroundTransition: 'fade',
+                parallaxBackgroundImage: 'img/circuits-4a.jpeg',
+                parallaxBackgroundSize: '5472px 3648px',
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>

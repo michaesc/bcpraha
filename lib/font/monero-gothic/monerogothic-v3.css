@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'monerogothicbold';
+    src: url('monerogothic-v3.woff2') format('woff2'),
+         url('monerogothic-v3.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
